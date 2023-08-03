@@ -1,0 +1,29 @@
+{
+  "name": "ecoprint",
+  "version": "1.0.0",
+  "description": "Ecological footprint project",
+  "main": "index.js",
+  
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apatel896/ecoprint.git"
+  },
+  "author": "Aryan Patel, Elvin Ebby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apatel896/ecoprint/issues"
+  },
+  "homepage": "https://github.com/apatel896/ecoprint#readme",
+  "dependencies": {
+    "next": "^13.4.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
