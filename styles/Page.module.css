@@ -1,0 +1,22 @@
+/* You can apply global styles here, including background image for the body */
+.container {
+  margin: 0;
+  padding: 0;
+  background-image: url('/forest.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Make the body height equal to the viewport height */
+  width: 100vw;
+}
+
+.titly {
+  width: 507px;
+  height: 94px;
+  color: #30642F;
+  font-family: Inter;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
