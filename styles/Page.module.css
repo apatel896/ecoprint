@@ -1,7 +1,19 @@
 /* You can apply global styles here, including background image for the body */
+@font-face {
+
+  font-family: "Bamboo Gothic";
+  
+  src: url(../public/fonts/bamboo-gothic.book.ttf);
+  
+  font-style: normal;
+  
+  }
 .container {
   margin: 0;
   padding: 0;
+  align-items: center;
+  display:flex;
+  justify-content: center;
   background-image: url('/forest.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,12 +23,22 @@
 }
 
 .titly {
-  width: 507px;
-  height: 94px;
-  color: #30642F;
-  font-family: Inter;
+  color: rgb(27, 78, 80);
+  font-family: "Bamboo Gothic";
+  margin:0;
+  padding: 0;
   font-size: 128px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
+
+.btn {
+  font-family: "Bamboo Gothic";
+  position: absolute;
+  top: 20px; /* Adjust the top distance as needed */
+  right: 20px; /* Adjust the right distance as needed */
+}
+
+
+
