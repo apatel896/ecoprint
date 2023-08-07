@@ -1,4 +1,4 @@
-'use client'
+
 import app from "../firebase/firebaseconfig.js"
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import React from "react";
