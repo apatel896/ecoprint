@@ -48,8 +48,8 @@ function Page() {
         }
 
         // else successful
-        console.log(result)
-        return router.push("/user/dashboard")
+        router.push('/user/dashboard')
+        return {result, error}
     }
     return (
 <       div className="wrapper" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}>
@@ -65,7 +65,7 @@ function Page() {
                 <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
               </label>
               <div className={styles.btnCenter}>
-                <GradientButton className={styles.btn} variant="contained">Sign In</GradientButton>
+                <GradientButton onClick={handleForm} className={styles.btn} variant="contained">Sign In</GradientButton>
               </div>
 
             </form>
