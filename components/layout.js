@@ -34,7 +34,7 @@ export default function BackgroundPic({
     return (
         <main style={{ backgroundImage: 'url("/forest.jpg")',backgroundSize:"cover",backgroundPosition:"center",height:"100vh",width:"100vw" }}>
         <AuthContext.Provider value={{ user }}>
-            {loading ? <h1>Loading</h1> : children}
+            {loading ? <h2>Loading...</h2> : children}
         </AuthContext.Provider>
         </main>
     );

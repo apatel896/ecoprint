@@ -8,10 +8,11 @@
     
     }
 .scontainer {
-    background-color: green;
+    background-color: #18523d;
     width: 28vw;
     height:85vh;
     border-radius:25px;
+    border: 10px white;
     display: flex;
     flex-direction:column;
     align-items: center;

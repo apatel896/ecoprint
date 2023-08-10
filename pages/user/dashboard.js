@@ -7,7 +7,7 @@ import { TextField } from '@mui/material'
 import { writeData } from '@/firebase/db/dbMethods.js';
 export default function Dashboard() {
     const [currName, setName] = React.useState("");
-    const auth = getAuth();
+    const auth = getAuth(app);
     const { user } = useAuthContext();
     const router = useRouter();
     React.useEffect(() => {
@@ -16,14 +16,21 @@ export default function Dashboard() {
         }
     }, [user]);
     const signOutUser = () => signOut(auth);
+    const sendName = async () => {
+        let req = await fetch('http://localhost:3000/api/addData',{
+            method: "POST",
+        
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ name: currName })
+        });
+    };
+
 
     return (<div display = "flex">
          <TextField className='welcomeTxtField' label="enter name here" onChange = {e => setName(e.target.value)}> </TextField>
-         <button onClick = {()=> {writeData('users', 'firstUser', {
-            name: currName
-         }
-         );
-        } }>
+         <button onClick = {sendName}>
             Click to register name w/ database
         </button>
         

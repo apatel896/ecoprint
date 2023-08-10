@@ -52,7 +52,7 @@ function Page() {
         return {result, error}
     }
     return (
-<       div className="wrapper" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}>
+<       div className="wrapper" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", }}>
             <div className={styles.scontainer+' '+styles.bmb}>
             <h1 className="mt-60 mb-30" style={{ padding: 0, margin: 0 }}>Sign in</h1>
             <form onSubmit={handleForm} className="form">
@@ -65,7 +65,7 @@ function Page() {
                 <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
               </label>
               <div className={styles.btnCenter}>
-                <GradientButton onClick={handleForm} className={styles.btn} variant="contained">Sign In</GradientButton>
+                <GradientButton onClick={handleForm} className={styles.btn} variant="contained" style={{position:"absolute", fontFamily: "Bamboo Gothic"}}>Sign In</GradientButton>
               </div>
 
             </form>
