@@ -16,21 +16,11 @@ export default function Dashboard() {
         }
     }, [user]);
     const signOutUser = () => signOut(auth);
-    const sendName = async () => {
-        let req = await fetch('http://localhost:3000/api/addData',{
-            method: "POST",
-        
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ name: currName })
-        });
-    };
 
 
     return (<div display = "flex">
          <TextField className='welcomeTxtField' label="enter name here" onChange = {e => setName(e.target.value)}> </TextField>
-         <button onClick = {sendName}>
+         <button onClick = {() => sendData({ name: currName })}>
             Click to register name w/ database
         </button>
         
