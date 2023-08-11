@@ -35,5 +35,6 @@ export default function Dashboard() {
         </button>
         
          <button onClick={signOutUser}>Sign Out</button>  
+         <button onClick={()=>router.push('/survey/start')}></button>
          </div>);
 }
