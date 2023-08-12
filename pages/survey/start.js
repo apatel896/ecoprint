@@ -8,15 +8,26 @@ import Question6 from '@/components/question6.js';
 import Question7 from '@/components/question7.js';
 import Question8 from '@/components/question8.js';
 import Question9 from '@/components/question9.js';
+import { useAuthContext } from '@/components/layout.js';
+import { useRouter } from 'next/router';
 
 export default function StartPage() {
+
     const questions = [Question1, Question2, Question3, Question4, Question5, Question6, Question7, Question8, Question9];
     const [currentQuestion, setCurrentQuestion] = React.useState(0);
+    const router = useRouter();
+    const { user } = useAuthContext();
     const CurrentComponent = questions[currentQuestion];
-    
+    React.useEffect(() => {
+        if (user == null) {
+            router.push('/');
+        }
+
+    });
+
     return (
         <>
-            <CurrentComponent />
+            <CurrentComponent email={user.email}/>
             <button onClick={() => {setCurrentQuestion(currentQuestion + 1)}}>Next Question</button>
         </>
     );

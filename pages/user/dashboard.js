@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { app } from '@/firebase/firebaseconfig.js';
 import { getAuth, signOut } from 'firebase/auth'
 import { TextField } from '@mui/material'
-import { writeData } from '@/firebase/db/dbMethods.js';
+import { sendData } from '@/firebase/db/dbMethods.js';
 export default function Dashboard() {
     const [currName, setName] = React.useState("");
     const auth = getAuth(app);
@@ -20,7 +20,7 @@ export default function Dashboard() {
 
     return (<div display = "flex">
          <TextField className='welcomeTxtField' label="enter name here" onChange = {e => setName(e.target.value)}> </TextField>
-         <button onClick = {() => sendData({ name: currName })}>
+         <button onClick = {() => sendData({ name: currName }, user.email)}>
             Click to register name w/ database
         </button>
         
