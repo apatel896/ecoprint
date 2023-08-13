@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import React from "react";
 import { useRouter } from 'next/navigation'
 import { useAuthContext } from "@/components/layout.js";
+import styles from "@/styles/Sign.module.css";
 
 const auth = getAuth(app);
 async function signUp(email, password) {
@@ -42,21 +43,26 @@ function Page() {
     }
     return (<div className="wrapper">
         <div className="form-wrapper">
-            <h1 className="mt-60 mb-30" style={{padding:0, margin:0}}>Sign up</h1>
+        <div className={styles.box}>
             <form onSubmit={handleForm} className="form">
-                <label htmlFor="email">
-                    <p>Email</p>
-                    <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" />
-                </label>
-                <label htmlFor="password">
-                    <p>Password</p>
-                    <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
-                </label>
-                <button type="submit">Sign up</button>
+                <span className={styles.textcenter}>Login</span>
+
+                <div className={styles.inputcontainer}>
+                    <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email"/>
+                        <label>Email</label>
+                </div>
+                <div className={styles.inputcontainer}>
+                    <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password"/>
+                        <label>Password</label>
+                </div>
+                <button type="button" className={styles.btn}>Sign Up</button>
             </form>
-            <h2> {error ? "Error occured signing up, try again" : ""} </h2>
         </div>
-    </div>);
+
+            <h2 style={{margin:0, padding:0}}> {error ? "Error occured signing up, try again" : ""} </h2>
+        </div>
+    </div>
+    );
 }
 
 export default Page;

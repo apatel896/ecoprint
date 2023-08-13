@@ -1,3 +1,80 @@
+
+
+/* Rest of your existing styles */
+/* Create a local class or ID for the body */
+  
+
+.textcenter {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 23px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+
+.box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #18523de4;
+    border-radius: 20px;
+    padding: 70px 100px;
+}
+
+.inputcontainer {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.inputcontainer label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.inputcontainer input {
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.inputcontainer input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #18523d;
+}
+
+.btn {
+    color: #fff;
+    background-color: #0edb90;
+    outline: none;
+    border: 0;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.inputcontainer input:focus ~ label,
+.inputcontainer input:valid ~ label {
+    top: -12px;
+    font-size: 12px;
+}
+
+
 @font-face {
 
     font-family: "Bamboo Gothic";
@@ -34,7 +111,7 @@
     margin-top: 20px; 
   }
 
-  .pder {
-    margin-top: 40px;
+.pder{
+    margin-top: 20px;
   }
-  
+

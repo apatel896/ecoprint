@@ -23,12 +23,18 @@ export default function StartPage() {
             router.push('/');
         }
 
-    });
+    }, [user]);
 
     return (
         <>
             <CurrentComponent email={user.email}/>
-            <button onClick={() => {setCurrentQuestion(currentQuestion + 1)}}>Next Question</button>
+            <button onClick={() => {
+                if (currentQuestion == 8) {
+                    router.push('/survey/finished');
+                    return;
+                }
+
+                setCurrentQuestion(currentQuestion + 1)}}>Next Question</button>
         </>
     );
 }

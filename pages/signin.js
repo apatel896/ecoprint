@@ -8,6 +8,7 @@ import { styled } from "@mui/system";
 import { Button } from "@mui/material";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useAuthContext } from "@/components/layout.js";
+import Image from 'next/image';
 const GradientButton = styled(Button)`
   background: linear-gradient(45deg, #1b4e50 30%, #1b4e50 90%);
   border-radius: 3px;
@@ -30,7 +31,7 @@ async function signIn(email, password) {
     return { result, error };
 }
 function Page() {
-    const user = useAuthContext;
+    const user = useAuthContext();
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [error, setError] = React.useState(false);
@@ -52,8 +53,10 @@ function Page() {
         return {result, error}
     }
     return (
+     
 <       div className="wrapper" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", }}>
             <div className={styles.scontainer+' '+styles.bmb}>
+            <Image src="/tree.jpg" height= {100} width= {100} style={{borderRadius:70, marginTop: 20}}/>
             <h1 className="mt-60 mb-30" style={{ padding: 0, margin: 0 }}>Sign in</h1>
             <form onSubmit={handleForm} className="form">
               <label htmlFor="email">
@@ -72,6 +75,7 @@ function Page() {
             <h2>{error ? "Error occurred, try signing in again" : ""}</h2>
           </div>
         </div>
+     
       );
       
 }

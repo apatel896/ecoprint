@@ -20,11 +20,8 @@ export default function Dashboard() {
 
     return (<div display = "flex">
          <TextField className='welcomeTxtField' label="enter name here" onChange = {e => setName(e.target.value)}> </TextField>
-         <button onClick = {() => sendData({ name: currName }, user.email)}>
-            Click to register name w/ database
-        </button>
         
          <button onClick={signOutUser}>Sign Out</button>  
-         <button onClick={()=>router.push('/survey/start')}></button>
+         <button onClick={()=>router.push('/survey/start')}>Click to begin survey</button>
          </div>);
 }
