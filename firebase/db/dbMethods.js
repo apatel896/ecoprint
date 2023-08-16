@@ -11,7 +11,7 @@ export async function writeData(collection, id, data) {
     return { result, error };
 }
 export const sendData = async (data, email) => {
-    let req = await fetch('http://localhost:3000/api/addData',{
+    let req = await fetch('/api/addData',{
         method: "POST",
     
         headers: {
@@ -36,7 +36,7 @@ export async function getDocument(collection, id) {
     return { result, error };
 }
 export async function getData(email) {
-    const res = await fetch('http://localhost:3000/api/getData', {
+    const res = await fetch('/api/getData', {
         method: "GET",
         headers: {
             "Email": email

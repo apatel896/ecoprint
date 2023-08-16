@@ -48,7 +48,7 @@ export default function Finished() {
     console.log(bullets)
     return (
         <div>
-        <button onClick={()=>{router.push('user/dashboard')}}>Dashboard</button>
+        <button onClick={()=>{router.push('/user/dashboard')}}>Dashboard</button>
         <ul>
             {bullets.map((rec) => {
                 return <li>{rec}</li>
